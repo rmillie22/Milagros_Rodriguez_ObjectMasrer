@@ -1,0 +1,31 @@
+
+public class Human {
+    public int strength;
+    public int stealth;
+    public int intelligence;
+    public int health;
+
+    public Human() {
+        this.strength = 3;
+        this.stealth = 3;
+        this.intelligence = 3;
+        this.health = 100;
+    }
+
+    public Human attack(Human attacked) {
+        attacked.health -= this.strength;
+        return this;
+    }
+
+    public void displayHealth() {
+        System.out.println(this.health);
+    }
+    public class HumanTest{
+        public static void main (String[] args){
+            Human human = new Human();
+            Human human2 = new Human();
+            human.attack(human2);
+            human2.displayHealth();
+        }
+    }
+}
